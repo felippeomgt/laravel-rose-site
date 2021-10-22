@@ -1,0 +1,869 @@
+/*************** BODY / BACKGROUND *************************/
+.logo {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    /*font-family: Arial;*/
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/******************** GRID ***********************/
+.body-bg{
+	background: white url("../images/bg2.png") fixed no-repeat 50% 0%;
+}
+
+.wrapper {
+    width: 1200px; /* width of the webpage */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.one-fourth {
+    width: 300px;
+    float: left;
+}
+
+.two-fourth {
+    width: 580px;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+}
+
+.three-fourth {
+    width: 890px;
+    margin-right: 10px;
+    float: left;
+}
+
+.three-fourth-right {
+    width: 890px;
+    margin-left: 10px;
+    float: left;
+}
+
+
+
+.padding {
+    padding: 10px;
+}
+
+.big-padding {
+    padding: 10px 30px 10px 30px;
+}
+
+/*************************** NAVBAR ****************************/
+
+.navbar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 80px;
+    background-color: #136293; /* color navbar */
+    border-bottom: 5px solid #1362B5; /* color navbar bottom */
+    line-height: 80px;
+    border-radius: 5px;
+
+    #background: rgba(207, 208, 0, 1);
+    #background: -moz-linear-gradient(45deg, rgba(207, 208, 0, 1) 0%, rgba(207, 208, 0, 1) 67%, rgba(207, 208, 0, 1) 84%, rgba(207, 208, 0, 1) 100%);
+    #background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(207, 208, 0, 1)), color-stop(67%, rgba(207, 208, 0, 1)), color-stop(84%, rgba(207, 208, 0, 1)), color-stop(100%, rgba(207, 208, 0, 1)));
+    #background: -webkit-linear-gradient(45deg, rgba(207, 208, 0, 1) 0%, rgba(207, 208, 0, 1) 67%, rgba(207, 208, 0, 1) 84%, rgba(207, 208, 0, 1) 100%);
+    #background: -o-linear-gradient(45deg, rgba(207, 208, 0, 1) 0%, rgba(207, 208, 0, 1) 67%, rgba(207, 208, 0, 1) 84%, rgba(207, 208, 0, 1) 100%);
+    #background: -ms-linear-gradient(45deg, rgba(207, 208, 0, 1) 0%, rgba(207, 208, 0, 1) 67%, rgba(207, 208, 0, 1) 84%, rgba(207, 208, 0, 1) 100%);
+	#background: linear-gradient(45deg, rgba(207, 208, 0, 1) 0%, rgba(207, 208, 0, 1) 67%, rgba(207, 208, 0, 1) 84%, rgba(207, 208, 0, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#feff1d', endColorstr='#feff1d', GradientType=1);
+}
+
+.navbar-inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
+
+.navbar ul {
+    list-style: none;
+    height: 80px;
+    padding: 0;
+}
+
+.navbar ul li {
+    height: 80px;
+    float: left;
+    display: block;
+    color: white;
+    padding: 0px 10px 0px 10px;
+}
+
+.navbar ul li:hover {
+    background-color: #f5d248;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-family: irish;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/****************** MEMBER PANEL ******************/
+
+.member-panel {
+    background-color: #136293;
+    color: whitesmoke;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.member-panel h1 {
+    text-transform: uppercase;
+    font-size: 16px;
+
+}
+
+.border {
+    border-bottom: 1px solid yellow;
+    position: relative;
+    z-index: 10
+}
+
+.border:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 8px;
+    left: 2px;
+    right: 2px;
+    bottom: -2px;
+    border-bottom: 1px solid gray;
+}
+
+.member-panel form {
+    width: 100%;
+}
+
+.member-panel input {
+    width: 90%;
+    padding: 10px;
+}
+
+.button-login {
+    margin-top: 10px;
+    background-color: #f5d248;
+    width: 100% !important;
+    color: #136293;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+.button-login:hover {
+    background-color: white;
+	color:#136293;
+	transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+}
+
+.member-panel-options ul {
+    list-style: none;
+    margin: 5px 0 0;
+    padding: 0;
+}
+
+.member-panel-options ul li {
+    display: inline;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.member-panel-options a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.control-panel {
+    position: relative;
+}
+
+.control-panel ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.control-panel a {
+    text-decoration: none;
+}
+
+.control-panel li {
+    color: gray;
+}
+
+.control-panel li:hover {
+    color: whitesmoke;
+}
+
+/********************** NEWS *****************/
+
+.news {
+    background-color: rgba(245,210,72, 0.5);
+    min-height: auto;
+    margin-top: -4px;   
+    float: left;
+	color:#0d1f70
+}
+
+/* .news :hover{ */
+	/* background-color: rgba(245,210,72, 0.8); */
+/* } */
+
+.news-item:hover{
+	background-color: rgba(245,210,72, 0.9);
+	color:#0d1f70;
+}
+
+.news-item {
+    width: 98%;
+    height: 155px;
+    padding: 10px;
+    float: left;
+}
+
+.news-image {
+    width: 200px;
+    float: left;
+    margin-right: 30px;
+}
+
+.news-text {
+    float: left;
+    width: 330px;
+    height: 135px;
+    padding-bottom: 15px;
+}
+
+.news-text h1, h3 {
+    margin: 0;
+    padding: 0;
+    font-family: irish;
+}
+
+.news-text h3 {
+    font-size: 12px;   
+    font-weight: normal;
+}
+
+.news-text p {
+    font-size: 14px;
+}
+
+.news a {
+    text-decoration: none;
+    color: white;
+}
+
+/******************** SERVER STATUS ***************/
+
+.server-status {
+    background-color: #136293;
+    box-shadow: inset 0px 0px 0px 1px rgba(97, 97, 97, 1);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.server-status h1 {	
+    margin-bottom: 20px;
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+	text-decoration:none;
+}
+
+.server-status h3 {
+    font-size: 16px;
+    display: inline;
+    color: whitesmoke;
+}
+
+.online {
+    padding: 10px 0px 10px 0px;
+    background-color: #2ca02c;
+    color: white;
+    width: 100%;
+    float: left;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: -10px;
+}
+
+.offline {
+    padding: 10px 0px 10px 0px;
+    background-color: #FF5114;
+    color: white;
+    width: 100%;
+    float: left;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: -10px;
+}
+
+.server-status ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.server-status ul li {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.user-info {
+    margin-bottom: 50px;
+}
+
+.user-info li {
+    display: inline;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 13px;
+
+}
+
+.rates{
+	border: solid 1px yellow;
+	padding-top:10px;
+}
+
+.server-rate {
+    background-color: #cfd000;
+    width: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: whitesmoke;
+    font-weight: bold;
+    margin-right: 20px;
+    float: left;
+}
+
+/*************** FACEBOOK **************/
+
+.facebook {
+    margin-top: 20px;
+}
+
+/*************** IMAGE OVERLAY **********************/
+.image-overlay {
+    position: absolute;
+    z-index: 100;
+}
+
+.image-overlay img {
+    width: 100%;
+}
+
+.member-panel-overlay {
+    width: 100px;
+    left: 70%;
+    top: 35%;
+    float: left;
+}
+
+.server-status-overlay {
+    width: 200px;
+    float: left;
+    left: 50%;
+    top: 55%;
+}
+
+.register-hawker-overlay {
+    width: 160px;
+    left: 80%;
+    float: left;
+}
+
+.register-penguin-overlay {
+    width: 140px;
+    left: -2%;
+    top: 43%;
+    float: left;
+}
+
+/******************* RANKINS *****************************/
+.ranking {
+    background-color: #136293;
+    margin-bottom: 20px;
+	border: 3px solid #0D1F70
+}
+
+.header {
+    background-color: #f5d248;
+}
+
+.position {
+    padding: 1px 5px 1px 4px;
+    background-color: #f5d248;
+    color: black;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.ranking h2 {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: bold;
+    #border-bottom: 1px solid #0D1F70;
+}
+
+.ranking table {
+    font-size: 14px;
+    color: white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+}
+
+.ranking tr:nth-child(even) {
+    background-color: #0D1F70;
+}
+
+.ranking th {
+    border-bottom: 1px solid #1C1D1F;
+    padding: 10px;
+}
+
+.ranking td {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    border: none;
+}
+
+/******************* FOOTER *****************/
+.footer {
+    padding-top: 60px;
+    width: 100%;
+    float: left;
+}
+
+.inner-footer {
+    width: 1165px;
+    padding: 20px;
+    background-color: #f2f26e;
+    margin-right: auto;
+    margin-left: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.nav-footer a {
+    text-decoration: none;
+    color: #0D1F70;	
+}
+
+.nav-footer a:hover{
+	color:white;
+	transition: all .3s ease;
+	-webkit-transition: all .3s ease;
+}
+
+.nav-footer ul {
+    list-style: none;
+}
+
+.nav-footer li {
+    padding: 2px 5px 2px 5px;
+    display: inline;
+    border-right: 1px solid gray;
+}
+
+.nav-footer li:last-child {
+    border: none;
+}
+
+.nav-copyright ul {
+    list-style: none;
+}
+
+.nav-copyright li {
+    display: inline;
+}
+
+.nav-copyright {
+    color: gray;
+    padding-top: 30px;
+    text-align: center;
+}
+
+/******************** DONATE SECTION *********************/
+
+.donate-section {
+    margin-top: 20px;
+}
+
+.donate-section img {
+    margin-bottom: -5px;
+    padding: 0;
+}
+
+/****************** REGISTER *********************/
+
+.register {
+    background-color: #f5d248;
+    position: relative;
+}
+
+.register h1 {
+    font-family: irish;
+    color: #0d1f70;
+}
+
+.register input {
+    width: 90%;
+    padding: 10px;
+}
+
+.personal input {
+    padding-left: 100px;
+    width: 79%;
+}
+
+.register p {
+    color: gray;
+}
+
+.g-recaptcha {
+    margin-top: 50px;
+}
+
+.button {
+    background-color: #136293;
+    color: white;
+    border: none;
+    font-weight: bold;
+    width: 93% !important;
+}
+
+.button:hover {
+    background-color: white;
+    color: #136293;
+	transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+}
+
+.error {
+    list-style: none;
+    display: list-item;
+    color: red;
+}
+
+#birthdate {
+    z-index: 10;
+    position: relative;
+}
+
+.ui-datepicker {
+    margin-left: 100px !important;
+}
+
+.account-created {
+    background-color: #136293;
+}
+
+.account-created h1 {
+    font-family: irish;
+}
+
+.account-created h2 {
+    font-family: irish;
+    font-weight: 100;
+}
+
+.account-verified {
+    width: 95%;
+    background-color: white;
+    font-size: 18px;
+}
+
+.account-verified-inner h1 {
+    font-family: irish;
+    font-size: 30px;
+    min-height: 100px;
+}
+
+.account-verified h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/*********** ACCOUNT **************/
+.account {
+    background-color: #f5d248;
+}
+
+/************ ARTICLE *****************/
+
+.article {
+    background-color: #136293;
+    position: relative;
+    padding-left: 120px;
+    min-height: 400px;
+}
+
+.article-header {
+    background-color: #1C1D1F;
+    padding-left: 120px;
+}
+
+.article-header h1 {
+
+    font-family: irish;
+    margin-bottom: 0;
+    color: whitesmoke;
+}
+
+.article-header h3 {
+    color: gray;
+    font-size: 12px;
+    font-family: Arial;
+}
+
+.news-overlay {
+    width: 150px;
+    left: 0;
+    top: -16%;
+}
+
+/***************** MODAL PASSWORD ****************/
+
+#dialog {
+    background-color: #1C1D1F;
+}
+
+/*************** LOGIN ******************/
+.login {
+    background-color: #136293;
+	color:#f5d248;
+}
+
+.login a {
+    color: gray;
+}
+
+.login .span, .text {
+    vertical-align:middle;
+    display:table-cell;
+}
+.login h1 {
+    display:table;
+    width:100%;
+    font-family: irish;
+}
+
+.login input {
+    width: 95%;
+    padding: 20px;
+}
+
+/************* CHANGE PASSWORD ***************/
+.passreset {
+    background-color: white;
+    min-height: 200px;
+}
+
+.passreset h1 {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.passreset input {
+    width: 96%;
+    padding: 20px;
+}
+
+.passreset input:last-child {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/**************** ADVERTORIAL SECTION *******************/
+
+.advertorial-section {
+    margin-bottom: 20px;
+}
+
+/*************** beta signup **************/
+
+.betasignup {
+    background-color: #1C1D1F;
+}
+
+.betasignup h1 {
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+.betasignup input, textarea {
+    width: 95%;
+    padding: 20px;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.betasignup input:last-child {
+    width: 100%;
+    border: none;
+    color: whitesmoke;
+    background-color: #FF9114;
+}
+
+/****************** SUPPORT *****************/
+
+.support {
+    background-color: #f5d248;
+}
+
+
+.new-ticket h1 {
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+.new-ticket input,textarea,select {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.new-ticket select {
+    width: 97%;
+}
+
+.new-ticket input {
+    width: 95%;
+}
+
+.new-ticket input:last-child {
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    background-color: #FF9114;
+    border: none;
+}
+
+.my-tickets h1 {
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+.ticket {
+    background-color: #1C1D1F;
+    padding: 10px;
+}
+
+.my-tickets a{
+    text-decoration: none !important;
+}
+
+.ticket td{
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+}
+
+.ticket td:nth-child(3) {
+    width: 400px;
+}
+
+.ticket td:first-child {
+    text-align: center;
+}
+
+.ticket td:last-child {
+    text-align: right;
+    color: black;
+}
+
+.ticket h1 {
+    margin: 0px 0px 5px 0px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.ticket h2 {
+    color: gray;
+    font-size: 12px;
+}
+
+.ticket-status {
+    color: whitesmoke;
+    padding: 10px;
+    background-color: #2b542c;
+}
+
+.ticket-messages {
+    background-color: white;
+}
+
+.ticket-messages h1 {
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.ticket-messages ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.ticket-messages textarea {
+    border-radius: 5px;
+    border:  1px solid gray;
+}
+
+.ticket-message {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+/***************** FONTS ********************/
+@font-face {
+    font-family: 'irish'; /*a name to be used later*/
+    src: url("../fonts/CelticHand.ttf")
+}
+
+@font-face {
+    font-family: 'underauthority'; /*a name to be used later*/
+    src: url("../fonts/UnderAuthority.ttf")
+}
