@@ -1,5 +1,5 @@
 <div class="server-status">
-    <img src="{{ asset('images/download_button.png') }}">
+    <a href="https://lsroseonline.s3.sa-east-1.amazonaws.com/setup/lsroseonline.exe"><img src="{{ asset('images/download_button.png') }}"></a>
     <span class="image-overlay server-status-overlay">
                 <img src="{{ asset('images/muse.png') }}">
             </span>

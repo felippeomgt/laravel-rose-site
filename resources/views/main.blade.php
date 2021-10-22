@@ -44,7 +44,7 @@
 				<a href="/rankigns">
                     <li>Rankings</li>
                 </a>				
-                <a href="/download">
+                <a href="https://lsroseonline.s3.sa-east-1.amazonaws.com/setup/lsroseonline.exe">
                     <li>Download</li>
                 </a>
 				<a href="/donate">
