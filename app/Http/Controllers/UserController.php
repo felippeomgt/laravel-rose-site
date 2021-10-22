@@ -90,6 +90,7 @@ class UserController extends Controller
             $account->Birthday = Input::get('birthdate');
             $account->answer = Input::get('mothersname');
             $account->Right = 1;
+            $account->MailIsConfirm = 1;
             $account->ip = request()->ip();
 
 
