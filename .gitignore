@@ -2,6 +2,7 @@
 vendor/
 node_modules/
 config/database.php
+.idea
 
 # Laravel 4 specific
 bootstrap/compiled.php

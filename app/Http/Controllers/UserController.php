@@ -95,7 +95,7 @@ class UserController extends Controller
 
 
             if ($account->save()) {
-                $this->sendActivateMail($account);
+//                $this->sendActivateMail($account);
                 return redirect('/accountcreated');
             }
         }
