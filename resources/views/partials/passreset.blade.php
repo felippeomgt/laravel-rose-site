@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Input;
 
 @section('content')
     <div class="big-padding passreset">
-        <h1 class="border">change password</h1>
+        <h1 class="border-ls">change password</h1>
         <form action="/changepassword" method="post">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="password" name="password" placeholder="password" required>

@@ -7,7 +7,7 @@
     </div>
     <div class="three-fourth-right">
         <div class="betasignup big-padding">
-            <h1 class="border">beta signup</h1>
+            <h1 class="border-ls">beta signup</h1>
             <form action="/betasignup" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="email" name="email" placeholder="email" required>

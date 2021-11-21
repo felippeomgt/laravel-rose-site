@@ -1,7 +1,7 @@
 <div class="member-panel">
     <a href="/register"><img src="{{ asset('images/joinus_button.png')}}"></a>
     <div class="big-padding">
-        <h1 class="border">Minha Conta</h1>
+        <h1 class="border-ls">Minha Conta</h1>
         @if(!Session::has('user'))
             <span class="image-overlay member-panel-overlay">
                 <img src="{{ asset('images/hawker.png') }}">
@@ -50,7 +50,7 @@
 <!-- Modal HTML embedded directly into document -->
 <div id="ex1" style="display:none;">
     <div class="modal-header">
-        <h1 class="border">Senha esquecida</h1>
+        <h1 class="border-ls">Senha esquecida</h1>
     </div>
 
     <form method="post" action="/forgottenpassword" class="forgottenpassword">

@@ -54,8 +54,20 @@ Route::get('/account/passreset', function () {
    return view('/partials/passreset');
 });
 
-Route::get('/donate', function () {
+Route::get('/donate', ['middleware' => 'authorization', function () {
     return view('/partials/donate');
+}]);
+
+Route::get('/rankings', function () {
+    return view('/partials/rankings');
+});
+
+Route::get('/armory', function () {
+    return view('/armory');
+});
+
+Route::get('/guides', function () {
+    return view('/guides');
 });
 
 Route::get('/paymentsucces', function () {

@@ -4,7 +4,7 @@
                 <img src="{{ asset('images/muse.png') }}">
             </span>
     <div class="big-padding">
-        <h1 class="border">Status do servidor</h1>
+        <h1 class="border-ls">Status do servidor</h1>
         @if(@fsockopen("177.71.147.73", 29000, $e, $s, 2) && @fsockopen("177.71.147.73", 29100, $e, $s, 2) && @fsockopen("177.71.147.73", 29200, $e, $s, 2))       
             <span class="online">online</span>
         @else

@@ -2,6 +2,7 @@
 vendor/
 node_modules/
 config/database.php
+config/paypal_payment.php
 .idea
 
 # Laravel 4 specific

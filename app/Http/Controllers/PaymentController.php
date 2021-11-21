@@ -181,8 +181,8 @@ class PaymentController extends Controller
         $payer->setPaymentMethod("paypal");
 
         $item1 = Paypalpayment::item();
-        $item1->setName($points . ' LSRose Coins')
-            ->setDescription('LSRose Coins - Pontos de Apoio')
+        $item1->setName($points . ' LSRose CASH')
+            ->setDescription('LSRose CASH')
             ->setCurrency('BRL')
             ->setQuantity(1)
             ->setTax(0)
