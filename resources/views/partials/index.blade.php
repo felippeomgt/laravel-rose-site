@@ -15,7 +15,7 @@
     <div class="two-fourth">
         <div class="banner">
 			
-            <img width="100%" src="{{ asset('images/header.png') }}">
+{{--            <img width="100%" src="{{ asset('images/header.png') }}">--}}
         </div>
 
         <div class="news">

@@ -115,7 +115,7 @@ class UserController extends Controller
         if($user->save()) {
 
             Mail::send('emails.mail', ['user' => $user], function ($m) use ($account) {
-                $m->from('noreply@lsrose.online', 'LS-ROSE Online');
+                $m->from('noreply@linkspawnrose.ddns.net', 'LS-ROSE Online');
 
                 $m->to($account->Email, $account->FirstName . " " . $account->LastName)->subject('Ativação de conta');
             });

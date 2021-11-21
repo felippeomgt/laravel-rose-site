@@ -1,7 +1,7 @@
 <div class="advertorial-section">
     <div id="slides">
         <a href="/getbeta"><img width="100%" src="{{asset('/images/beta_add.png')}}"></a>
-        <a href="#2"><img width="100%" src="{{asset('/images/itemmall_add.png')}}"></a>
+        <a href="/itemmall"><img width="100%" src="{{asset('/images/itemmall_add.png')}}"></a>
 
     </div>
 </div>

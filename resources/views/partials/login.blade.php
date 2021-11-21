@@ -18,9 +18,9 @@
 
             <form method="post" action="/authenticate">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input placeholder="Usuario" type="text" name="username" required>
+                <input placeholder="Usuario" type="text" class="form-control" name="username" required>
                 {{$errors->login->first('username')}}
-                <input placeholder="Senha" type="password" name="password" required autocomplete="off">
+                <input placeholder="Senha" type="password" class="form-control" name="password" required autocomplete="off">
                 {{$errors->login->first('password')}}
 
                 <div class="member-panel-options">

@@ -9,7 +9,7 @@
     <div class="three-fourth-right">
         <div class="big-padding support">
             <div class="new-ticket">
-                <h1 class="border">NOVO TICKET</h1>
+                <h1 class="border-ls">NOVO TICKET</h1>
                 <form method="post" action="/createticket">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="text" name="title" placeholder="Título" required>
@@ -34,7 +34,7 @@
             </div>
 
             <div class="my-tickets">
-                <h1 class="border">Meus TICKETS</h1>
+                <h1 class="border-ls">Meus TICKETS</h1>
                 @foreach(\App\Ticket::where('Account', Session::get('user')->Account)->get() as $ticket)
                     <a href="/ticket/{{$ticket->id}}">
                         <div class="ticket">

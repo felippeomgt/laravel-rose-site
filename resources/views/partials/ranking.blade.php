@@ -20,7 +20,7 @@ $counter = 1;
 
 <div class="ranking ">
     <div class="header big-padding">
-        <h2>Rankings</h2>
+        <h2><a class="white-link" href="/rankings">Rankings</a></h2>
     </div>
     <table class="table-striped">
         <tr>
@@ -30,7 +30,7 @@ $counter = 1;
             <!--<th>Zuly</th> -->
         </tr>
 
-        @foreach(\App\Avatar::all() as $avatar)
+        @foreach(\App\Avatar::where('txtNAME', 'NOT LIKE', '%]%')->orderBy('btLEVEL','DESC')->limit(10)->get() as $avatar)
             <tr>
                 <td><span class="position">{{$counter++}}</span></td>
                 <td style="max-width: 100px;">{{$avatar->txtNAME}}</td>

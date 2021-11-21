@@ -7,20 +7,27 @@
 }
 
 body {
+    background: white url("../images/bg5.png") fixed no-repeat 50% 0%;
+
     margin: 0;
     padding: 0;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    
+
+    -webkit-transition: background-image 0.2s ease-in-out;
+    transition: background-image 0.2s ease-in-out;
+
     /*font-family: Arial;*/
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+
 /******************** GRID ***********************/
 .body-bg{
-	background: white url("../images/bg2.png") fixed no-repeat 50% 0%;
+
+
 }
 
 .wrapper {
@@ -98,7 +105,7 @@ body {
 }
 
 .navbar ul li {
-    height: 80px;
+    height: 70px;
     float: left;
     display: block;
     color: white;
@@ -131,13 +138,13 @@ body {
 
 }
 
-.border {
+.border-ls {
     border-bottom: 1px solid yellow;
     position: relative;
     z-index: 10
 }
 
-.border:after {
+.border-ls:after {
     content: "";
     display: block;
     position: absolute;
@@ -436,31 +443,42 @@ body {
     font-size: 22px;
     font-weight: bold;
     #border-bottom: 1px solid #0D1F70;
+    margin-top: 11px;
 }
 
 .ranking table {
-    font-size: 14px;
-    color: white;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border-collapse: collapse;
+font-size: 14px;
+color: white;
+width: 100%;
+margin: 0;
+padding: 0;
+border-collapse: collapse;
 }
 
 .ranking tr:nth-child(even) {
-    background-color: #0D1F70;
+background-color: #0D1F70;
 }
 
 .ranking th {
-    border-bottom: 1px solid #1C1D1F;
-    padding: 10px;
+border-bottom: 1px solid #1C1D1F;
+padding: 10px;
 }
 
 .ranking td {
-    text-align: center;
-    margin: 0;
-    padding: 10px;
-    border: none;
+text-align: center;
+margin: 0;
+padding: 10px;
+border: none;
+}
+
+.white-link{
+text-decoration: none;
+color:white;
+}
+
+.white-link:hover{
+color:#0D1F70;
+text-decoration: underline;
 }
 
 /******************* FOOTER *****************/
@@ -480,28 +498,28 @@ body {
     border-top-right-radius: 5px;
 }
 
-.nav-footer a {
+.nav-footer-ls a {
     text-decoration: none;
     color: #0D1F70;	
 }
 
-.nav-footer a:hover{
+.nav-footer-ls a:hover{
 	color:white;
 	transition: all .3s ease;
 	-webkit-transition: all .3s ease;
 }
 
-.nav-footer ul {
+.nav-footer-ls ul {
     list-style: none;
 }
 
-.nav-footer li {
+.nav-footer-ls li {
     padding: 2px 5px 2px 5px;
     display: inline;
     border-right: 1px solid gray;
 }
 
-.nav-footer li:last-child {
+.nav-footer-ls li:last-child {
     border: none;
 }
 
@@ -866,4 +884,51 @@ body {
 @font-face {
     font-family: 'underauthority'; /*a name to be used later*/
     src: url("../fonts/UnderAuthority.ttf")
+}
+
+/***************** BOOTSTRAP TABS ********************/
+.rankins-tabs {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nav-fill,
+.nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.nav-pills .nav-link {
+    background: 0 0;
+    border: 0;
+    border-radius: 0.25rem;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #f5d248;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.nav-fill .nav-item .nav-link, .nav-justified .nav-item .nav-link {
+    width: 100%;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #0d6efd;
+    background-color: #f5d248;
+
 }

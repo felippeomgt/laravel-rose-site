@@ -6,13 +6,16 @@
     <title>LS-ROSE Online- FREE TO PLAY FANTASY MMORPG</title>
     <!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
     <link rel="icon" type="img/ico" href="{{ asset('favicon.ico') }}">
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}" type="text/css">
     <link href="{{ asset('css/css.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{asset('/css/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{ asset('/css/jquery.modal.css') }}" type="text/css">
+    <script src="{{asset('/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('/js/jquery.min.js')}}"></script>
 	<script src="{{asset('/js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('/js/jquery.modal.min.js')}}" type="text/javascript" charset="utf-8"></script>
     <script src="{{asset('/js/jquery.slides.min.js')}}"></script>
+
 
 </head>
 
@@ -41,7 +44,7 @@
 				<a href="/account">
                     <li>Login</li>
                 </a>
-				<a href="/rankigns">
+				<a href="/rankings">
                     <li>Rankings</li>
                 </a>				
                 <a href="https://lsroseonline.s3.sa-east-1.amazonaws.com/setup/lsroseonline.exe">
@@ -76,7 +79,7 @@
 
 <div class="footer">
     <div class="inner-footer">
-        <div class="nav-footer border">
+        <div class="nav-footer-ls border-ls">
             <ul class="navbar-text">
 				<li><a href="/">Início </a></li>
                 <li><a href="/register">Registrar </a></li>
