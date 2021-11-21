@@ -541,11 +541,18 @@ text-decoration: underline;
 
 .donate-section {
     margin-top: 20px;
+    margin-left: 15px;
+    color:white;
+    margin-right: 15px;
 }
 
 .donate-section img {
     margin-bottom: -5px;
     padding: 0;
+}
+
+.donation-container{
+    margin-bottom: 20px;
 }
 
 /****************** REGISTER *********************/
@@ -931,4 +938,15 @@ text-decoration: underline;
     color: #0d6efd;
     background-color: #f5d248;
 
+}
+
+.cash {
+    font-weight: 700;
+    cursor:pointer;
+    color: #fff;
+    background-color: #f5d248;
+}
+
+.cash:hover{
+    color: #0d6efd;
 }
