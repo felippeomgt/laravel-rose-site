@@ -90,20 +90,18 @@ class UserController extends Controller
             $account->Birthday = Input::get('birthdate');
             $account->answer = Input::get('mothersname');
             $account->Right = 1;
-            $account->MailIsConfirm = 1;
+            $account->USER_CP = 0;
+            $account->MailIsConfirm = 0;
             $account->ip = request()->ip();
 
-
-
             if ($account->save()) {
-//                $this->sendActivateMail($account);
-                return redirect('/accountcreated');
+                $this->sendActivateMail($account);
+                return redirect('/accountcreated/'.$account->Account);
             }
         }
         return redirect('/register')
             ->withErrors($validator, 'register')
             ->withInput();
-
 
     }
 
@@ -115,7 +113,7 @@ class UserController extends Controller
         if($user->save()) {
 
             Mail::send('emails.mail', ['user' => $user], function ($m) use ($account) {
-                $m->from('noreply@linkspawnrose.ddns.net', 'LS-ROSE Online');
+                $m->from(env('MAIL_USERNAME','lsroseonline@gmail.com'), 'LS-ROSE Online');
 
                 $m->to($account->Email, $account->FirstName . " " . $account->LastName)->subject('Ativação de conta');
             });
@@ -155,19 +153,14 @@ class UserController extends Controller
             ->withErrors(array('betakey' => 'Betakey already in use'), 'betakey');
     }
 
-    public function mailen()
-    {
-        $user = UserInfo::find('bierdopje');
-
-        Mail::send('emails.mail', ['user' => $user], function ($m) use ($user) {
-            $m->from('noreply@lsrose.online', 'LS-ROSE Online');
-
-            $m->to('felippe.omgt@gmail.com', $user->FirstName . " " . $user->LastName)->subject('Testing design');
-        });
-    }
-
     function forgottenpassword() {
-        $account = UserInfo::where('Email', Input::get('email'))->where('answer', Input::get('security'))->get()->first();
+        $validator = Validator::make(Input::all(), [
+            'email' => 'required',
+            'security' => 'required',
+        ]);
+        if ($validator->passes()) {
+            $account = UserInfo::where('Email', Input::get('email'))->where('answer', Input::get('security'))->get()->first();
+        }
         if(isset($account)) {
             $pass = new Forgottenpassword();
             $pass->Account = $account->Account;
@@ -176,7 +169,7 @@ class UserController extends Controller
             if($pass->save())
 
                 Mail::send('emails.forgottenpassword', ['user' => $pass], function ($m) use ($account) {
-                    $m->from('noreply@lsrose.online', 'LS-ROSE Online');
+                    $m->from(env('MAIL_USERNAME','lsroseonline@gmail.com'), 'LS-ROSE Online');
 
                     $m->to($account->Email, $account->FirstName . " " . $account->LastName)->subject('Forgotten password');
                 });

@@ -11,8 +11,8 @@
         <div class="login big-padding">
             <h1>
                 <span class="text">Acessar sua conta</span><span class="span">
-        <img class="goldT" src="{{asset('/images/penguins.png')}}">
-    </span>
+                    <img class="goldT" src="{{asset('/images/penguins.png')}}">
+                </span>
             </h1>
 
 
@@ -25,7 +25,7 @@
 
                 <div class="member-panel-options">
                     <ul>
-                        <li><a id="forgotpass" href="#ex1" rel="modal:open"><span> </span>Esqueci minha senha</a></li>
+                        <li><a id="forgotpass" href="/forgot"><span> </span>Esqueci minha senha</a></li>
                         <li><a href="/register"><span> </span>Criar conta</a></li>
                     </ul>
                 </div>

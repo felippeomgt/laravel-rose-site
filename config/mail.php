@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.sendgrid.net'),
+    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'support@lsrose.online', 'name' => 'LS-ROSE Online'],
+    'from' => ['address' => 'no-reply@lsrose.com.br', 'name' => 'LS-ROSE Online'],
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME','apikey'),
+    'username' => env('MAIL_USERNAME','lsroseonline@gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -94,7 +94,7 @@ return [
     |
     */
 
-    'password' => env('MAIL_PASSWORD','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'),
+    'password' => env('MAIL_PASSWORD',''),
 
     /*
     |--------------------------------------------------------------------------

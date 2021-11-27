@@ -2,35 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>LS Rose Online - Verificação de Email</title>
+    <title>LS Rose Online - Ticket de suporte recebido</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body style="margin: 0; padding: 0;">
 <table align="center"  cellpadding="0" cellspacing="0" width="600">
     <tr>
-        <td align="center" >
+        <td align="center" bgcolor="#FF8C1F">
             <img src="https://lsrose.com.br/images/logo_website.png" alt="LS ROSE Logo" width="200" style="display: block;" />
         </td>
     </tr>
     <tr>
         <td style="padding: 20px; font-family: Arial" bgcolor="#ffffff">
-            Prezado {{$user->Account}},<br>
+            O usuario {{$ticket->Account}} acaba de registrar um novo ticket de suporte!<br>
             <br>
-            Seja muito bem vindo ao Link Spawn ROSE Online!
-            Antes de começar a sua aventura, precisamos verificar sua conta.
-            Para verificar sua conta clique no link abaixo.
+            <h3>{{$ticket->id}} - {{$ticket->title}} | {{$ticket->department}}</h3>
+                {{$ticketmessage->message}}
+
             <br>
-            <br>
-            <a href="https://lsrose.com.br/account/verify/{{$user->Account}}/{{$user->token}}">https://lsrose.com.br/account/verify/{{$user->Account}}/{{$user->token}}</a><br>
-            <br>
-            Se clicar no link não funcionar, copie e cole a URL no seu navegador.<br>
-            <br>
-            Te desejamos sorte no LS Rose, esperamos que se divirta muito conosco!<br>
-            <br>
-            Caso tenha algum problema, não hesite em nos contatar no canal de suporte no nosso <a href="https://discord.gg/TyFSnDXb75">Discord</a> ou se preferir abrindo um <a href="https://lsrose.com.br/support">ticket no site</a>.
-            <br><br>
-            Atenciosamente,<br>
-            Staff Link Spawn<br>
+            Favor averiguar o problema.<br>
             <br>
             <a href="https://lsrose.com.br">Link Spawn Rose Online</a><br>
             support@lsrose.com.br
