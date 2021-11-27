@@ -13,10 +13,9 @@
             }, 1000);
         });
     </script>
-
-    <div class="account-verified big-padding">
+    <div class="account-created big-padding text-white">
         <div class="account-verified-inner">
-            <h1>Conta verificada!</h1>
+            <h1 style="color:#f5d248;">Conta verificada!</h1>
             <h3>Divirta-se!</h3>
 
 			

@@ -15,7 +15,7 @@
 
                 <div class="member-panel-options">
                     <ul>
-                        <li><a id="forgotpass" href="#ex1" rel="modal:open"><span> > </span>Esqueci minha senha</a></li>
+                        <li><a id="forgotpass" href="/forgot"><span> > </span>Esqueci minha senha</a></li>
                         <li><a href="/register"><span> > </span>Criar Conta</a></li>
                     </ul>
                 </div>

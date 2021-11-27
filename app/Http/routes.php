@@ -42,12 +42,16 @@ Route::get('/pass', ['middleware' => 'authorization', function() {
     return view('/partials/index');
 }]);
 
+Route::get('/forgot', function (){
+    return view('/partials/forgot');
+});
+
 Route::get('/login', function (){
     return view('/partials/login');
 });
 
-Route::get('/accountcreated', function (){
-    return view('partials/accountcreated');
+Route::get('/accountcreated/{account}', function ($account){
+    return view('partials/accountcreated')->with('account',$account);
 });
 
 Route::get('/account/passreset', function () {
@@ -113,6 +117,8 @@ Route::post('/cash', 'PaymentController@cashMoney');
 Route::post('/betasignup', 'UserController@betasignup');
 Route::post('/createticket', ['middleware' => 'authorization','uses' => 'TicketController@create']);
 Route::post('/updateticket/{id}', ['middleware' => 'authorization','uses' => 'TicketController@addreply']);
+
+Route::post('/resend-verification-email/{account}', ['uses' => 'UserController@sendActivateMail']);
 
 Route::get('/pay', 'PaymentController@pay');
 Route::get('/payments', 'PaymentController@index');

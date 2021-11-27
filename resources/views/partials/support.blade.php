@@ -8,6 +8,7 @@
 
     <div class="three-fourth-right">
         <div class="big-padding support">
+            @if(Session::get('user')->Right < 32)
             <div class="new-ticket">
                 <h1 class="border-ls">NOVO TICKET</h1>
                 <form method="post" action="/createticket">
@@ -32,33 +33,61 @@
                     {{ session('message') }}
                 </form>
             </div>
+            @endif
 
             <div class="my-tickets">
-                <h1 class="border-ls">Meus TICKETS</h1>
-                @foreach(\App\Ticket::where('Account', Session::get('user')->Account)->get() as $ticket)
-                    <a href="/ticket/{{$ticket->id}}">
-                        <div class="ticket">
-                            <table>
-                                <tr>
-                                    <td>{{$ticket->id}}</td>
-                                    <td>
-                                        {!! $ticket->closed ? '<span style="background-color: red;" class="ticket-status">closed</span>':
-                                         '<span style="background-color: green;" class="ticket-status">open</span>'!!}
-                                    </td>
-                                    <td>
-                                        <h1>{{$ticket->title}}</h1>
-                                        <h2>{{$ticket->department}}</h2>
-                                    </td>
-                                    <td>
-                                        <h4>{{$ticket->created_at}}</h4>
-                                    </td>
-                                </tr>
-                            </table>
+                @if(Session::get('user')->Right > 32)
+                    <h1 class="border-ls">TICKETS ABERTOS</h1>
+                    @foreach(\App\Ticket::where('closed', false)->get() as $ticket)
+                        <a href="/ticket/{{$ticket->id}}">
+                            <div class="ticket">
+                                <table>
+                                    <tr>
+                                        <td>{{$ticket->id}}</td>
+                                        <td>
+                                            {{$ticket->Account}}
+                                        </td>
+                                        <td>
+                                            <h1>{{$ticket->title}}</h1>
+                                            <h2>{{$ticket->department}}</h2>
+                                        </td>
+                                        <td>
+                                            <h4>{{$ticket->created_at}}</h4>
+                                        </td>
+                                    </tr>
+                                </table>
 
 
-                        </div>
-                    </a>
-                @endforeach
+                            </div>
+                        </a>
+                    @endforeach
+                @else
+                    <h1 class="border-ls">Meus TICKETS</h1>
+                    @foreach(\App\Ticket::where('Account', Session::get('user')->Account)->get() as $ticket)
+                        <a href="/ticket/{{$ticket->id}}">
+                            <div class="ticket">
+                                <table>
+                                    <tr>
+                                        <td>{{$ticket->id}}</td>
+                                        <td>
+                                            {!! $ticket->closed ? '<span style="background-color: red;" class="ticket-status">closed</span>':
+                                             '<span style="background-color: green;" class="ticket-status">open</span>'!!}
+                                        </td>
+                                        <td>
+                                            <h1>{{$ticket->title}}</h1>
+                                            <h2>{{$ticket->department}}</h2>
+                                        </td>
+                                        <td>
+                                            <h4>{{$ticket->created_at}}</h4>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                            </div>
+                        </a>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>
