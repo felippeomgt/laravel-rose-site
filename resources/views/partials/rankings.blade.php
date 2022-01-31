@@ -60,7 +60,7 @@ $counterPVP = 1;
                     </tr>
                 </thead>
 
-                @foreach(\App\Avatar::where('txtNAME', 'not like', '%]%')->orderBy('btLEVEL','DESC')->limit(10)->get() as $avatar)
+                @foreach(\App\Avatar::join('Userinfo', 'Userinfo.Account', '=', 'txtACCOUNT')->where('Userinfo.Right', '=', '1')->orderBy('btLEVEL','DESC')->limit(10)->get() as $avatar)
                     <tr>
                         <td><span class="position">{{$counterChar++}}</span></td>
                         <td style="max-width: 100px;">{{$avatar->txtNAME}}</td>

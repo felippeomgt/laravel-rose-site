@@ -5,16 +5,17 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.5.9",
-        "laravel/framework": "5.2.*",
-        "anhskohbo/no-captcha": "2.*",
-        "guzzlehttp/guzzle": "~4.0",
-        "anouar/paypalpayment": "~1.0"
+        "php": ">=7.3.0",
+        "laravel/framework": "^8.0",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "symfony/http-foundation": "^5.1",
+        "mateusjunges/laravel-pix": "^1.1",
+        "laravel/helpers": "^1.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~4.0",
+        "phpunit/phpunit": "^9.0",
         "symfony/css-selector": "2.8.*|3.0.*",
         "symfony/dom-crawler": "2.8.*|3.0.*"
     },

@@ -1,5 +1,5 @@
 <?php
-use Illuminate\Support\Facades\Input;
+
 ?>
 
 @extends('main')
@@ -52,9 +52,7 @@ use Illuminate\Support\Facades\Input;
                 <h1 class="border-ls">Informações de segurança</h1>
                 <input placeholder="Palavra-segura ou nome da mãe*" class="form-control" title="Informe uma palavra de segurança para identificar a propriedade dessa conta, sugerimos usar o nome da mãe" type="text" name="mothersname" id="mothersname" value="{{Input::old('mothersname')}}" required>
                 <span class="error">{{ $errors->register->first('mothersname') }}</span>
-                {!! app('captcha')->display() !!}
-                <span class="error">{{ $errors->register->first('g-recaptcha-response') }}</span>
-                <p>* campo obrigatório</p>
+
                 <input class="button" value="Criar" type="submit">
 
 

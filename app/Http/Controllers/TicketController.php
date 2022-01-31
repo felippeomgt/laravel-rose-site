@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Avatar;
 use App\Ticket;
 use App\Ticketmessage;
 use App\UserInfo;
@@ -9,14 +10,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Validator;
 use App\Http\Requests;
-use Illuminate\Support\Facades\Input;
 use Session;
 
 class TicketController extends Controller
 {
-    function create()
+    function create(Request $request)
     {
-        $validator = Validator::make(Input::all(), [
+        $validator = Validator::make($request->all(), [
             'title' => 'required',
             'department' => 'required',
             'message' => 'required'
@@ -28,15 +28,15 @@ class TicketController extends Controller
             $account = Session::get('user')->Account;
 
             $ticket->Account = $account;
-            $ticket->title = Input::get('title');
-            $ticket->department = Input::get('department');
+            $ticket->title = $request->input('title');
+            $ticket->department = $request->input('department');
             $ticket->ip = request()->ip();
 
 
             if ($ticket->save()) {
 
                 $ticketmessage->ticketid = $ticket->id;
-                $ticketmessage->message = Input::get('message');
+                $ticketmessage->message = $request->input('message');
 
                 if ($ticketmessage->save()){
                     $this->mailUser($ticket, $ticketmessage);
@@ -94,8 +94,8 @@ class TicketController extends Controller
         return redirect('/');
     }
 
-    function addreply($id) {
-        $validator = Validator::make(Input::all(), [
+    function addreply($id, Request $request) {
+        $validator = Validator::make($request->all(), [
             'message' => 'required',
         ]);
 
@@ -109,7 +109,7 @@ class TicketController extends Controller
         if(isset($ticket) && $ticket->Account == Session::get('user')->Account) {
             $message = new Ticketmessage();
             $message->ticketid = $id;
-            $message->message = Input::get('message');
+            $message->message = $request->input('message');
 
             $ticket->replied = false;
 

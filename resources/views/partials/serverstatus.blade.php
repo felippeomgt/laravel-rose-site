@@ -19,7 +19,7 @@
 		
 		<h1>Rates do servidor</h1>
         <ul class='rates'>
-            <li><span class="server-rate">exp</span>30x</li>
+            <li><span class="server-rate">exp</span>10x</li>
             <li><span class="server-rate">zuly</span>5x</li>
             <li><span class="server-rate">drop</span>1x</li>
         </ul>
