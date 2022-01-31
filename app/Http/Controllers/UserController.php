@@ -15,18 +15,17 @@ use Auth;
 use Hash;
 use Session;
 use App\Http\Requests;
-use Illuminate\Support\Facades\Input;
 
 class UserController extends Controller
 {
 
-    public function authenticate()
+    public function authenticate(Request $request)
     {
-
-        $user = UserInfo::where('Account', '=', Input::get('username'))->get()->first();
+        $input = $request->input('username');
+        $user = UserInfo::where('Account', '=', $input)->get()->first();
 
         if(isset($user)) {
-            if($user->MD5PassWord == md5(Input::get('password'))) { // If their password is still MD5
+            if($user->MD5PassWord == md5($request->input('password'))) { // If their password is still MD5
 
                 Session::put('user', $user);
 
@@ -44,9 +43,9 @@ class UserController extends Controller
         return redirect('/');
     }
 
-    function update() {
+    function update(Request $request) {
 
-        $validator = Validator::make(Input::all(), [
+        $validator = Validator::make($request->all(), [
             'firstname' => 'required',
             'lastname' => 'required',
             'mothersname' => 'required',
@@ -55,9 +54,9 @@ class UserController extends Controller
         if ($validator->passes()) {
             $user = Session::get('user');
             $user = UserInfo::where('Account', '=', $user->Account)->get()->first();
-            $user->FirstName = Input::get('firstname');
-            $user->LastName = Input::get('lastname');
-            $user->answer = Input::get('mothersname');
+            $user->FirstName = $request->input('firstname');
+            $user->LastName = $request->input('lastname');
+            $user->answer = $request->input('mothersname');
 
             if ($user->save()) {
                 return redirect('/account');
@@ -67,9 +66,9 @@ class UserController extends Controller
             ->withErrors($validator, 'update');
     }
 
-    function create() {
+    function create(Request $request) {
 
-        $validator = Validator::make(Input::all(), [
+        $validator = Validator::make($request->all(), [
             'Account' => 'required|unique:UserInfo',
             'password' => 'required|confirmed',
             'password_confirmation' => 'required',
@@ -82,13 +81,13 @@ class UserController extends Controller
 
         if ($validator->passes()) {
             $account = new UserInfo();
-            $account->Account = Input::get('Account');
-            $account->MD5Password = md5(Input::get('password'));
-            $account->Email = Input::get('Email');
-            $account->FirstName = Input::get('firstname');
-            $account->LastName = Input::get('lastname');
-            $account->Birthday = Input::get('birthdate');
-            $account->answer = Input::get('mothersname');
+            $account->Account = $request->input('Account');
+            $account->MD5Password = md5($request->input('password'));
+            $account->Email = $request->input('Email');
+            $account->FirstName = $request->input('firstname');
+            $account->LastName = $request->input('lastname');
+            $account->Birthday = $request->input('birthdate');
+            $account->answer = $request->input('mothersname');
             $account->Right = 1;
             $account->USER_CP = 0;
             $account->MailIsConfirm = 0;
@@ -120,8 +119,8 @@ class UserController extends Controller
         }
     }
     
-    function activatebeta() {
-        $validator = Validator::make(Input::all(), [
+    function activatebeta(Request $request) {
+        $validator = Validator::make($request->all(), [
             'betakey' => 'required|unique:UserInfo',
         ]);
 
@@ -130,9 +129,9 @@ class UserController extends Controller
             $user = UserInfo::where('Account', '=', $user->Account)->get()->first();
 
             $user->AllowBeta = 1;
-            $user->betakey = Input::get('betakey');
+            $user->betakey = $request->input('betakey');
 
-            $key = Betakey::where('key', '=', Input::get('betakey'))->get()->first();
+            $key = Betakey::where('key', '=', $request->input('betakey'))->get()->first();
 
             if (isset($key)) {
                 $key->used = true;
@@ -153,13 +152,13 @@ class UserController extends Controller
             ->withErrors(array('betakey' => 'Betakey already in use'), 'betakey');
     }
 
-    function forgottenpassword() {
-        $validator = Validator::make(Input::all(), [
+    function forgottenpassword(Request $request) {
+        $validator = Validator::make($request->all(), [
             'email' => 'required',
             'security' => 'required',
         ]);
         if ($validator->passes()) {
-            $account = UserInfo::where('Email', Input::get('email'))->where('answer', Input::get('security'))->get()->first();
+            $account = UserInfo::where('Email', $request->input('email'))->where('answer', $request->input('security'))->get()->first();
         }
         if(isset($account)) {
             $pass = new Forgottenpassword();
@@ -183,8 +182,8 @@ class UserController extends Controller
 
     }
 
-    function changepassword() {
-        $validator = Validator::make(Input::all(), [
+    function changepassword(Request $request) {
+        $validator = Validator::make($request->all(), [
             'account' => 'required',
             'token' => 'required',
             'password' => 'required|confirmed',
@@ -193,15 +192,15 @@ class UserController extends Controller
         ]);
 
         if ($validator->passes()) {
-            $pass = Forgottenpassword::where('Account', Input::get('account'))
-                ->where('token', Input::get('token'))
+            $pass = Forgottenpassword::where('Account', $request->input('account'))
+                ->where('token', $request->input('token'))
                 ->get()->first();
 
 
             if(isset($pass) && $pass->created_at->diffInHours() < 24) {
                 $user = UserInfo::find($pass->Account);
                 if(isset($user)) {
-                    $user->MD5PassWord = md5(Input::get('password'));
+                    $user->MD5PassWord = md5($request->input('password'));
 
                     if($user->save())
                         return redirect('/');
@@ -218,8 +217,8 @@ class UserController extends Controller
 
     }
 
-    function betasignup() {
-        $validator = Validator::make(Input::all(), [
+    function betasignup(Request $request) {
+        $validator = Validator::make($request->all(), [
             'email' => 'required|email|unique:Betareservations',
             'reason' => 'required',
         ]);
@@ -227,8 +226,8 @@ class UserController extends Controller
         if($validator->passes()) {
             $beta = new Betareservation();
 
-            $beta->Email = Input::get('email');
-            $beta->reason = Input::get('reason');
+            $beta->Email = $request->input('email');
+            $beta->reason = $request->input('reason');
 
             if($beta->save()) {
                 return redirect('/');

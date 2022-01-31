@@ -10,7 +10,7 @@
     <link href="{{ asset('css/css.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{asset('/css/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{ asset('/css/jquery.modal.css') }}" type="text/css">
-    <script src="{{asset('/js/bootstrap.min.js')}}"></script>
+
     <script src="{{asset('/js/jquery.min.js')}}"></script>
 	<script src="{{asset('/js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('/js/jquery.modal.min.js')}}" type="text/javascript" charset="utf-8"></script>
@@ -20,13 +20,15 @@
 </head>
 
 @hasSection('notice')
-
+    <body class="body-launcher">
 	@yield('notice')
+    </body>
 	
 @endif
 
-
 @hasSection('content')
+    <script src="{{asset('/js/bootstrap.min.js')}}"></script>
+
 <body class="body-bg">
 <div class="wrapper">
     <div class="logo">

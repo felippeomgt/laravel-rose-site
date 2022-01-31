@@ -30,7 +30,7 @@ $counter = 1;
             <!--<th>Zuly</th> -->
         </tr>
 
-        @foreach(\App\Avatar::where('txtNAME', 'NOT LIKE', '%]%')->orderBy('btLEVEL','DESC')->limit(10)->get() as $avatar)
+        @foreach(\App\Avatar::join('Userinfo', 'Userinfo.Account', '=', 'txtACCOUNT')->where('Userinfo.Right', '=', '1')->orderBy('btLEVEL','DESC')->limit(10)->get() as $avatar)
             <tr>
                 <td><span class="position">{{$counter++}}</span></td>
                 <td style="max-width: 100px;">{{$avatar->txtNAME}}</td>

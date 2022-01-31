@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Paypalpayment;
 use Session;
@@ -20,6 +21,7 @@ class PaymentController extends Controller
     public function index()
     {
         echo "<pre>";
+
 
         $payments = Paypalpayment::getAll(array('count' => 1, 'start_index' => 0), $this->_apiContext);
 
@@ -166,10 +168,10 @@ class PaymentController extends Controller
         return $price;
     }
 
-    function store()
+    function store(Request $request)
     {
 
-        $points = Input::get('points');
+        $points = $request->input('points');
         $price = $this->getPrize($points);
 
 

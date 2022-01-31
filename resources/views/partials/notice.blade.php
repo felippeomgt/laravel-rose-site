@@ -2,19 +2,18 @@
 
 @section('notice')
 
-
 <div class="one-fourth">
-        <div class="news">
-            @foreach(\App\Newsitem::where('publish', '<=', \Carbon\Carbon::now())->orderBy('publish', 'desc')->get() as $newsitem)
-                <a href="/news/{{$newsitem->id}}">
-                    <div class="news-item">
-                        <div class="news-image">
-                            <img src="{{ asset('images/'.$newsitem->type.'.png') }}">
-                        </div>
-                        <div class="news-text">
-                            <h1>{{$newsitem->title}}</h1>
+        <div class="notice">
+            @foreach(\App\Newsitem::where('publish', '<=', \Carbon\Carbon::now())->orderBy('publish', 'desc')->limit(1)->get() as $newsitem)
+                <a target="_blank" href="/news/{{$newsitem->id}}">
+                    <div class="notice-item">
+{{--                        <div class="notice-image">--}}
+{{--                            <img src="{{ asset('images/'.$newsitem->type.'.png') }}">--}}
+{{--                        </div>--}}
+                        <div class="notice-text">
+                            <h1>{{!! $newsitem->title !!}}</h1>
                             <h3>{{$newsitem->publish}}</h3>
-                            <p>{{$newsitem->body}}</p>
+                            <p>{{!! $newsitem->body !!}}</p>
                         </div>
                     </div>
                 </a>

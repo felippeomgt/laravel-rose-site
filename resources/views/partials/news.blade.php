@@ -8,7 +8,7 @@
     </div>
     <div class="three-fourth-right">
         <div class="article-header big-padding">
-            <h1>{{$news->title}}</h1>
+            <h1>{{!! nl2br($news->title) !!}}</h1>
             <h3>{{$news->publish}}</h3>
         </div>
         <div class="article big-padding">

@@ -45,9 +45,9 @@ class AuthController extends Controller
         return "test";
     }
 
-    public function authenticate()
+    public function authenticate(Request $request)
     {
-        if (Auth::attempt(['Account' => Input::get('username'), 'MD5Password' => Input::get('password')])) {
+        if (Auth::attempt(['Account' => $request->input('username'), 'MD5Password' => $request->input('password')])) {
             // Authentication passed...
             return redirect()->intended('dashboard');
         }
